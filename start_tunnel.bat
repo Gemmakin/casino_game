@@ -1,0 +1,6 @@
+@echo off
+echo Configuration de ngrok...
+ngrok config add-authtoken 2sEOxDhKrQ5q3lou8pGOKCnVXv6_5coWE5ERByaiQQFpSyfxK
+echo Démarrage du tunnel...
+ngrok http 5000
+pause

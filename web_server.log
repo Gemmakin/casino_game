@@ -1,0 +1,12 @@
+2025-01-28 00:12:01,631 - INFO - Démarrage du serveur web
+2025-01-28 00:12:01,735 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on https://127.0.0.1:5000
+ * Running on https://10.10.10.104:5000
+2025-01-28 00:12:01,736 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-28 00:12:01,753 - INFO -  * Restarting with stat
+2025-01-28 00:12:02,331 - INFO - Démarrage du serveur web
+2025-01-28 00:12:02,355 - WARNING -  * Debugger is active!
+2025-01-28 00:12:02,373 - INFO -  * Debugger PIN: 634-049-924
+2025-01-28 00:13:56,556 - INFO -  * Detected change in 'C:\\Users\\Utilisateur\\CascadeProjects\\casino_game\\web_server.py', reloading
+2025-01-28 00:13:56,650 - INFO -  * Restarting with stat

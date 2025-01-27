@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="MobileOptimized" content="176">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Casino Royal</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <div class="container">
+            <div id="games" class="page active">
+                <div class="header">
+                    <h1>🎰 Casino Royal</h1>
+                    <div id="balance">
+                        <span id="balance-amount">0</span> 💰
+                    </div>
+                </div>
+                <div class="games-list">
+                    <button class="game-btn" onclick="openGame('roulette')">
+                        <span class="game-icon">🎲</span>
+                        <span class="game-name">Roulette</span>
+                    </button>
+                    <button class="game-btn" onclick="openGame('blackjack')">
+                        <span class="game-icon">🃏</span>
+                        <span class="game-name">Blackjack</span>
+                    </button>
+                    <button class="game-btn" onclick="openGame('dice')">
+                        <span class="game-icon">🎲</span>
+                        <span class="game-name">Dés</span>
+                    </button>
+                    <button class="game-btn" onclick="openGame('crash')">
+                        <span class="game-icon">📈</span>
+                        <span class="game-name">Crash</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="roulette" class="page">
+                <div class="header">
+                    <button class="back-btn" onclick="backToMenu()">←</button>
+                    <h2>Roulette</h2>
+                </div>
+                <div class="roulette-wheel"></div>
+                <div class="bet-controls">
+                    <input type="number" id="roulette-bet" placeholder="Mise" min="1">
+                    <button onclick="placeBet('roulette')">Miser</button>
+                </div>
+            </div>
+
+            <div id="blackjack" class="page">
+                <div class="header">
+                    <button class="back-btn" onclick="backToMenu()">←</button>
+                    <h2>Blackjack</h2>
+                </div>
+                <div class="blackjack-table">
+                    <div id="dealer-cards"></div>
+                    <div id="player-cards"></div>
+                </div>
+                <div class="bet-controls">
+                    <input type="number" id="blackjack-bet" placeholder="Mise" min="1">
+                    <button onclick="placeBet('blackjack')">Miser</button>
+                </div>
+            </div>
+
+            <div id="dice" class="page">
+                <div class="header">
+                    <button class="back-btn" onclick="backToMenu()">←</button>
+                    <h2>Dés</h2>
+                </div>
+                <div class="dice-container"></div>
+                <div class="bet-controls">
+                    <input type="number" id="dice-bet" placeholder="Mise" min="1">
+                    <button onclick="placeBet('dice')">Miser</button>
+                </div>
+            </div>
+
+            <div id="crash" class="page">
+                <div class="header">
+                    <button class="back-btn" onclick="backToMenu()">←</button>
+                    <h2>Crash</h2>
+                </div>
+                <div class="crash-graph">
+                    <div id="multiplier">1.00x</div>
+                </div>
+                <div class="bet-controls">
+                    <input type="number" id="crash-bet" placeholder="Mise" min="1">
+                    <button id="crash-btn" onclick="toggleCrash()">Démarrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
