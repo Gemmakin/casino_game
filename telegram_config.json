@@ -2,5 +2,8 @@
     "bot_username": "@Fantome_caz_bot",
     "mini_app_url": "https://casinoroyalbot.com",
     "description": "Casino Royal Mini-Application",
-    "bot_token": "[YOUR_BOT_TOKEN]"
+    "bot_token": "6976322964:AAGcZyj_PYxxxxxxxxxxx",
+    "webhook_url": "https://fantome-caz-03ccb8457920.herokuapp.com/webhook",
+    "admin_chat_id": "1234567890",
+    "allowed_users": []
 }
