@@ -9,16 +9,17 @@ CORS(app)
 STATIC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'web')
 
 @app.route('/')
-def index():
-    return send_from_directory(STATIC_DIR, 'index.html')
+def home():
+    return "Casino Royal Bot Web Server"
 
-@app.route('/<path:path>')
-def static_files(path):
+@app.route('/web/<path:path>')
+def serve_web(path):
     return send_from_directory(STATIC_DIR, path)
 
 @app.route('/manifest.json')
-def manifest():
+def serve_manifest():
     return send_from_directory(os.path.dirname(os.path.abspath(__file__)), 'manifest.json')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)

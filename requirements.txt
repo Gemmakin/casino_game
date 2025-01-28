@@ -8,3 +8,11 @@ gunicorn
 cryptography
 requests
 Pillow==10.1.0
+flask
+flask-cors
+gunicorn
+python-telegram-bot
+cryptography
+requests
+pygame
+pillow
