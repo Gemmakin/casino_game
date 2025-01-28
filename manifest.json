@@ -4,7 +4,7 @@
     "description":  "Un casino virtuel avec plusieurs jeux : roulette, blackjack, dés et crash",
     "version":  "1.0.0",
     "author":  "Casino Royal Team",
-    "start_url":  "https://casinoroyalbot.com",
+    "start_url":  "https://fantome-caz-03ccb8457920.herokuapp.com/",
     "display":  "standalone",
     "background_color":  "#000000",
     "theme_color":  "#FF0000",
