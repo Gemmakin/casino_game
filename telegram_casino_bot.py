@@ -1,7 +1,13 @@
 import logging
+import json
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes, MessageHandler, filters
 import random
+import os
+
+# Charger la configuration Telegram
+with open('telegram_config.json', 'r') as config_file:
+    telegram_config = json.load(config_file)
 
 # Configuration du logging
 logging.basicConfig(
@@ -208,17 +214,26 @@ async def blackjack_button_handler(update: Update, context: ContextTypes.DEFAULT
         await query.edit_message_text(result_text)
 
 def main():
-    # Création de l'application avec votre token
-    application = Application.builder().token("7995554685:AAGAARe4ab1oD-M1bhAZOgWTNYCeEsUl87U").build()
+    # Récupérer le token et l'URL du webhook depuis la configuration
+    bot_token = telegram_config['bot_token']
+    webhook_url = telegram_config['webhook_url']
 
-    # Ajout des handlers
-    application.add_handler(CommandHandler("start", start))
-    application.add_handler(CallbackQueryHandler(button_handler, pattern='^(roulette|blackjack|balance)$'))
-    application.add_handler(CallbackQueryHandler(blackjack_button_handler, pattern='^(hit|stand)$'))
+    # Créer l'application
+    application = Application.builder().token(bot_token).build()
+
+    # Ajouter les gestionnaires
+    application.add_handler(CommandHandler('start', start))
+    application.add_handler(CallbackQueryHandler(button_handler))
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_game_input))
 
-    # Démarrage du bot
-    application.run_polling(allowed_updates=Update.ALL_TYPES)
+    # Configurer le webhook
+    port = int(os.environ.get('PORT', 5000))
+    application.run_webhook(
+        listen='0.0.0.0',
+        port=port,
+        url_path=bot_token,
+        webhook_url=f"{webhook_url}{bot_token}"
+    )
 
 if __name__ == '__main__':
     main()

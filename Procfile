@@ -1,1 +1,1 @@
-web: gunicorn web_server:app
+web: python telegram_casino_bot.py
